@@ -70,6 +70,7 @@ class ReportsController extends Component
     //metodo obtener los detalles de venta del saleDetails mas la cantidad y la suma total
     public function getDetails($saleId)
     {
+        //obtenemos datos
         $this->details = SaleDetails::join('products as p' , 'p.id', 'sale_details.product_id')
         ->select('sale_details.id','sale_details.price','sale_details.quantity','p.name as product')
         //dtalle de ventas

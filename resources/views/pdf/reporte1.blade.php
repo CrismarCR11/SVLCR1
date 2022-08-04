@@ -24,13 +24,13 @@
 			</td>
 			<td class="info_factura">
 				<div class="round">
-                    @foreach($data as $item)
+                    
 					<span class="h3">Factura</span>
 					<p>No. Factura: <strong>000001</strong></p>
 					<p>Fecha:  {{$fechaHoy}} </p>
 					<p>Hora: 10:30am</p>
-					<p>Vendedor: {{$item->user}}</p>  
-                   @endforeach
+					<p>Vendedor: </p>  
+                   
 				</div>
 			</td>
 		</tr>

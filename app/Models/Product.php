@@ -10,10 +10,16 @@ class Product extends Model
     use HasFactory;
     //meodos para añadir informacion para un llenador masivo
     protected $fillable = ['name','barcode','cost','price','stock','alerts','image','category_id'];
-    //relacion que tiene con categoria 
-    public function category()
+    //relacion que tiene con categoria y tambien para usarlo en el component 
+    public function categoria()
     {
-        return $this->belongsTo(Category::class);
+        return $this->belongsTo(Categorys::class);
+
+    }
+    //relacion que tiene con saleDetails y tambien para usarlo en el component 
+    public function saleDetails()
+    {
+        return $this->hasMany(SaleDetails::class);
 
     }
     public function getImagenAttribute()

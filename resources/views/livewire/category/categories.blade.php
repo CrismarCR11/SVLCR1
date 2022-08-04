@@ -109,6 +109,7 @@
     {   
         if(products>0)
         {
+            console.log(products);
             //swal es para mensaje
             swal('no se puede eliminar porque tiene productos')
             return;

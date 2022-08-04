@@ -80,8 +80,8 @@
                                             <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
                                         </svg>
                                     </a>
-
-                                    <a href="javascript:void(0)" onclick="Confirm('{{$product->id}}')" class="btn btn-dark" title="Delete">
+                                    
+                                    <a href="javascript:void(0)" onclick="Confirm('{{$product->id}}' , '{{ $product->saleDetails->count() }}')" class="btn btn-dark" title="Delete">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-trash-2">
                                             <polyline points="3 6 5 6 21 6"></polyline>
                                             <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
@@ -137,9 +137,16 @@
         
     });
     //funcion de ventana emergente de confirmacion para eliminar
-    function Confirm(id)
+    function Confirm(id, saleDetails)
     {   
         
+        if(saleDetails>0)
+        {
+            //swal es para mensaje
+            swal('no se puede eliminar porque tiene una venta echa')
+            return;
+        }
+
         swal({
             title: 'CONFIRMAR',
             text: '¿CONFIRMAS ELIMINAR EL REGISTRO?',

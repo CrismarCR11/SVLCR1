@@ -10,4 +10,9 @@ class Sale extends Model
     use HasFactory;
      //meodos para añadir informacion para un llenador masivo
      protected $fillable = ['total','items','cash','change','status','user_id'];
+     public function sale_details()
+    {
+        return $this->hasMany(SaleDetails::class);
+
+    }
 }
