@@ -74,7 +74,7 @@ class RolesController extends Component
 
     public function Edit(Role $role)
     {
-        //buscar el rol antiguo
+        //buscar el rol con el metodo antiguo
         //$role = Role::find($id);
         //mandar los datos a los propiedades
         $this->selected_id = $role->id;

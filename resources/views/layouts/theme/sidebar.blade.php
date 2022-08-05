@@ -165,5 +165,45 @@
 
         </ul>
     </nav>
+    <div id="compact_submenuSidebar" class="submenu-sidebar">
+
+        <div class="submenu" id="dashboard">
+            
+        </div>
+
+        <div class="submenu" id="app">
+            
+        </div>
+
+        <div class="submenu" id="uiKit">
+            
+        </div>
+
+        <div class="submenu" id="components">
+            
+        </div>
+
+        <div class="submenu" id="forms">
+           
+        </div>
+
+
+        <div class="submenu" id="tables">
+            
+        </div>
+
+        <div class="submenu" id="users">
+            
+        </div>
+
+        <div class="submenu" id="pages">
+            
+        </div>
+        
+        <div class="submenu" id="more">
+            
+        </div>
+
+    </div>
 
 </div>

@@ -199,7 +199,7 @@ class UsersController extends Component
         if($user){
             $sale = Sale::where('user_id', $user->id)->count();
             //validar si tiene ventas el usuario
-            if($sales > 0 ) {
+            if($sale > 0 ) {
                 $this->emit('user-withsales'. 'No es posible eliminar el usuario por que tiene ventas registradas');
             } else {
                 $user->delete();

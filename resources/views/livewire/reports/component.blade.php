@@ -203,7 +203,7 @@
         })
 
         //eventos
-        window.livewire.on('show-modal', msg=>{
+        window.livewire.on('show-modal', Msg=>{
             $('#modalDetails').modal('show')
         })
 

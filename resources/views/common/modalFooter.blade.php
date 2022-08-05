@@ -1,6 +1,6 @@
 <div>
       <div class="modal-footer">
-        <button type="button" wire:click.prevent="resetUI()" class="btn btn-dark close-btn text-info" data-desmiss="modal">
+        <button type="button" wire:click.prevent="resetUI()" class="btn btn-dark close-btn text-info" data-dismiss="modal">
           CERRAR
         </button>
 

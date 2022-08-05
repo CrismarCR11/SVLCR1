@@ -25,7 +25,7 @@
                         Sincronizar Todos
                     </button>
 
-                    <button onclick="Revocar()" type="button" class="btn btn-dark mbmobile mr-5">
+                    <button wire:click.prevent="RemoveAll()" type="button" class="btn btn-dark mbmobile mr-5">
                         Revocar Todos
                     </button>
                 </div>
@@ -91,25 +91,25 @@
 
 <script>
     document.addEventListener('DOMContentLoaded', function(){
-        window.livewire.on('sync-error', Msg =>)
-        {
+        window.livewire.on('sync-error', Msg =>{
             noty(Msg)
-        }
+        })
+        
         //evento de permiso
-        window.livewire.on('permi', Msg =>)
-        {
+        window.livewire.on('permi', Msg =>{
             noty(Msg)
-        }
+        })
+        
         //
-        window.livewire.on('syncall', Msg =>)
-        {
+        window.livewire.on('syncall', Msg =>{
             noty(Msg)
-        }
+        })
+        
         //evento de remover
-        window.livewire.on('removeall', Msg =>)
-        {
+        window.livewire.on('removeall', Msg =>{
             noty(Msg)
-        }
+        })
+        
     });
 
     function Revocar()

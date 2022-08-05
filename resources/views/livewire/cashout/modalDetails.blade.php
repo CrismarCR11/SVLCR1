@@ -14,7 +14,7 @@
 
                 <div class="table-responsive">
                     <table class="table table-bordered table-striped mt-1">
-                        <thead class="text-white" style="background: #3B3FF5">
+                        <thead class="text-white" style="background: #030426">
                             <tr>
                                 <th class="table-th text-center text-white">PRODUCTO</th>
                                 <th class="table-th text-center text-white">CANT</th>

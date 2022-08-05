@@ -62,7 +62,7 @@ class AsignarController extends Component
         ->section('content');
     }
 
-    public $listeners = ['revokeall' => 'RemoveAll'];
+    //public $listeners = ['revokeall' => 'RemoveAll'];
 
     //metodo para remover todos los permisos
     public function RemoveAll()
@@ -97,7 +97,7 @@ class AsignarController extends Component
         $this->emit('syncall', "Se sincronizaron todos los permisos al role $role->name ");
     }
 
-    //
+    //metodo mandar notificaciones cada vez que se de click un permiso y asignarlo
     public function SyncPermiso($state, $permisoName)
     {
         //validar si estamos seleccionando un rol
@@ -107,11 +107,11 @@ class AsignarController extends Component
             //
             if($state)
             {
-                //dar permiso
+                //dar permiso al usuario
                 $roleName->givePermissionTo($permisoName);
                 $this->emit('permi', 'Permiso asginado correcamente');
             } else {
-                //eliminar permiso
+                //eliminar permiso del usuario
                 $roleName->revokePermissionTo($permisoName);
                 $this->emit('permi', 'Permiso eliminado correctamente');
             }

@@ -136,7 +136,7 @@
 </div>
 <script>
     document.addEventListener('DOMContentLoaded', function(){
-        window.livewire.on('show-modal', msg=>{
+        window.livewire.on('show-modal', Msg =>{
             $('#modal-details').modal('show')
         }); 
     });

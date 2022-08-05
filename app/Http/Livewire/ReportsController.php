@@ -39,11 +39,11 @@ class ReportsController extends Component
         //obtener las ventas del dia 
         if($this->reportType == 0)// ventas del dia
         {
-            //fecha
+            //obtener fecha de hoy
             $from = Carbon::parse(Carbon::now())->format('Y-m-d') . ' 00:00:00';
             $to = Carbon::parse(Carbon::now())->format('Y-m-d') . ' 23:59:59';
         } else {
-            //fechas especificadas por el usuario
+            //obtener fechas especificadas por el usuario
             $from = Carbon::parse($this->dateFrom)->format('Y-m-d') . ' 00:00:00';
             $to = Carbon::parse($this->dateTo)->format('Y-m-d') . ' 23:59:59';
         }
@@ -77,7 +77,7 @@ class ReportsController extends Component
         ->where('sale_details.sale_id', $saleId)
         ->get();
         //closhorts
-        //obtener la suma usando la funcion closhorts
+        //obtener la suma usando la funcion closure
         
         $suma = $this->details->sum(function($item){
             return $item->price * $item->quantity;

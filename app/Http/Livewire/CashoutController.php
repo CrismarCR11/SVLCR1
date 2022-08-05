@@ -43,7 +43,7 @@ class CashoutController extends Component
         
         $this->total = $this->sales ? $this->sales->sum('total') : 0;
         $this->items = $this->sales ? $this->sales->sum('items') : 0;
-
+        
     }
 
     //metodo detalle de vista

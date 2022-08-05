@@ -164,7 +164,7 @@ class CoinsController extends Component
         $this->emit('item-updated', 'Denominacion Actualizado');
     }
     
-    //metodo resetui para el cerra del edit y agregar
+    //metodo resetui para el cerra del edit, agregar y para borrar datos en la pantalla
     public function resetUI()
     {
         $this->type ='';

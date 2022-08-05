@@ -45,10 +45,10 @@
                         <h6> ${{ number_format($d->price,2)}}</h6>
                       </td>
                       <td>
-                        <h6> ${{ number_format($d->quantity,0)}}</h6>
+                        <h6 class="text-center"> {{ number_format($d->quantity,0)}}</h6>
                       </td>
                       <td>
-                        <h6> ${{ number_format($d->price*$d->quantity,2)}}</h6>
+                        <h6 class="text-center"> ${{ number_format($d->price*$d->quantity,2)}}</h6>
                       </td>
                         
                     </tr>
