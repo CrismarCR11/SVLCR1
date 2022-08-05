@@ -72,7 +72,7 @@ class ExportController extends Controller
             $contar++;
             $vendedores=$name->user;
         }
-        dd($vendedores);
+        //dd($vendedores);
         $contar2=$contar;
        /*for($i=0; $i<$contar2; $i++)
        {

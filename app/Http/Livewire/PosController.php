@@ -254,7 +254,7 @@ class PosController extends Component
             $this->emit('sale-error', 'EL EFECTIVO DEBE SER MAYOR O IGUAL A TOTAL');
             return;
         }
-
+        //DB ayuda a si se tuvo una obstruccion en la creacion de la venta se retorne atras
         //para usar las transacciones en laravel
         DB::beginTransaction();
 
