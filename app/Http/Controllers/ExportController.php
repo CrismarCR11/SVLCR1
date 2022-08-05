@@ -20,7 +20,7 @@ class ExportController extends Controller
     public function reportPDF($userId, $reportType, $dateFrom = null, $dateTo = null)
     {
        $fechaHoy = Carbon::parse(Carbon::now())->format('Y-m-d');
-        
+       $horahoy = Carbon::parse(Carbon::now())->format('H:m:s A');
         $data = [];
         $data1= [];
          //obtener las ventas del dia 
@@ -96,7 +96,7 @@ class ExportController extends Controller
         $user = $userId == 0 ? 'Todos' : User::find($userId)->name;
         //usar lo importado del PDF
         //loadView = pasando la vista
-        $pdf = FacadePdf::loadView('pdf.reporte1', compact('data','reportType', 'user', 'dateFrom', 'dateTo' , 'fechaHoy', 'vende'));
+        $pdf = FacadePdf::loadView('pdf.reporte1', compact('data','reportType', 'user', 'dateFrom', 'dateTo' , 'fechaHoy', 'vende', 'horahoy'));
         //visualizar en el navegador
         return $pdf->stream('salesReport.pdf'); 
         //para descargar el reporte en pdf

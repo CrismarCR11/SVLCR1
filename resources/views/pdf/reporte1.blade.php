@@ -28,7 +28,7 @@
 					<span class="h3">Factura</span>
 					<p>No. Factura: <strong>000001</strong></p>
 					<p>Fecha:  {{$fechaHoy}} </p>
-					<p>Hora: 10:30am</p>
+					<p>Hora: {{ $horahoy }}</p>
 					<p>Vendedor: </p>  
                    
 				</div>
