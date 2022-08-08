@@ -22,8 +22,18 @@
                         <div class="media mx-auto">
                             <img src="assets/img/90x90.jpg" class="img-fluid mr-2" alt="avatar">
                             <div class="media-body">
-                                <h5>Alan Green</h5>
-                                <p>Project Leader</p>
+                                <!-- integracion de los nombres en el perfil  -->
+                                @if(Auth::user()=='')
+                                    
+                                    <h5>Alan Green</h5>
+                                    <p>Project Leader</p>
+                                 @else 
+                                  <h5> {{Auth::user()->name}} </h5>
+                                  <p>{{Auth::user()->profile}}</p>
+                                
+                                @endif
+                                
+                                
                             </div>
                         </div>
                     </div>

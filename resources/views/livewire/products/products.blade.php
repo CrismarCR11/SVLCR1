@@ -139,7 +139,7 @@
     //funcion de ventana emergente de confirmacion para eliminar
     function Confirm(id, saleDetails)
     {   
-        
+        //si es mayour a cero tiene una venta echa
         if(saleDetails>0)
         {
             //swal es para mensaje
