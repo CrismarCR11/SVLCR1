@@ -39,6 +39,8 @@
 
         //
         document.getElementById('hiddenTotal').value = ''
+        document.getElementById('hiddenTotal').focus()
         document.getElementById('change').text.value = ''
+        document.getElementById('change').focus()
     }
 </script>

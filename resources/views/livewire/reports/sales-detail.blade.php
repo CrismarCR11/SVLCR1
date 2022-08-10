@@ -68,7 +68,7 @@
 
 <div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-dark close-btn text-info" data-desmiss="modal">
+        <button type="button" class="btn btn-dark close-btn text-info" style="background: #3b3f5c" data-dismiss="modal">
           CERRAR
         </button>
 

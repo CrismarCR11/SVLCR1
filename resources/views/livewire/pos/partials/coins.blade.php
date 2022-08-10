@@ -31,7 +31,7 @@
                             <input type="number" id="cash" wire:model="efectivo" wire:keydown.enter="saveSale"
                                 class="form-control text-center" value="{{ $efectivo }}">
                             <div class="input-group-append">
-                                <span wire:click="$set('efectivo', 0)" class="input-group-text"
+                                <span wire:click="Set({{0}},{{0}})" class="input-group-text"
                                     style="background: #3B3F5C; color:white">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" 
                                     viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"

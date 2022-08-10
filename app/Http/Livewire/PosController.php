@@ -62,9 +62,15 @@ class PosController extends Component
         'scan-code' => 'ScanCode',
         'removeItem' => 'removeItem',
         'clearCart' => 'clearCart',
-        'saveSale' => 'saveSale'
+        'saveSale' => 'saveSale',
+        'Set' => 'Set'
     ];
-    
+    //funcion icone x
+    public function Set($efectivo, $change)
+    {
+        $this->efectivo = $efectivo;
+        $this->change = $change;
+    }
     //metodo recibir el codigo de barras
     public function ScanCode($barcode, $cant = 1){
         //obtener el producto en base al codigo de barras

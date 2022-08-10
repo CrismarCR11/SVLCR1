@@ -13,7 +13,7 @@ class AsignarController extends Component
     
     use WithPagination;
 
-    public $role, $componentName, $permisosSelected = [], $old_permissions = [];
+    public $role, $componentName, $permisosSelected = [], $old_permissions = [], $namerol, $idrol, $rolesTD, $mostrarTR;
     private $pagination = 10;
 
     public function paginationView()
@@ -25,24 +25,26 @@ class AsignarController extends Component
     {
         $this->role = 'Elegir';
         $this->componentName = 'Asignar Permisos';
+        $this->rolesTD = 'Algo';
     }
 
     public function render()
     {
+        
         //mostrar el listado de pemisos
         $permisos = Permission::select('name', 'id', DB::raw("0 as checked") )
         ->orderBy('name', 'asc')
         ->paginate($this->pagination);
 
-        if($this->role != 'Elegir')
+        if($this->role != 'Elegir' )
         {
             $list = Permission::join('role_has_permissions as rp', 'rp.permission_id', 'permissions.id')
             ->where('role_id', $this->role)->pluck('permissions.id')->toArray();
             //lista de rol de permisos anterior
             $this->old_permissions = $list;
         }
-
-        if($this->role != 'Elegir')
+        
+        if($this->role != 'Elegir' )
         {
             foreach ($permisos as $permiso) {
                 $role = Role::find($this->role);
@@ -51,12 +53,25 @@ class AsignarController extends Component
                 if($tienePermiso){
                     $permiso->checked = 1;
                 }
+                
             }
+            $this->namerol=$role->name;
+            $this->idrol=$role->id;
+            $this->mostrarTR=$this->rolesTD;
+            
+        }else{
+            $this->namerol=$this->role;
         }
+        //todos los permisos
 
+        
         return view('livewire.asignar.component',[
             'roles' => Role::orderBy('name', 'asc')->get(),
-            'permisos' => $permisos
+            'permisos' => $permisos,
+            'namerol' => $this->namerol,
+            'Elegir_rol' => $this->role,
+            'idrol' => $this->idrol,
+            'mostrarTR' => $this->mostrarTR
         ])
         ->extends('layouts.theme.app')
         ->section('content');

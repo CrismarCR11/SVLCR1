@@ -13,6 +13,7 @@ use App\Http\Livewire\UsersController;
 use App\Http\Livewire\CashoutController;
 use App\Http\Livewire\ReportsController;
 use App\Http\Controllers\ExportController;
+use App\Http\Livewire\ProfileController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -48,6 +49,7 @@ Route::get('asignar', AsignarController::class);
 Route::get('users', UsersController::class);
 Route::get('cashout', CashoutController::class);
 Route::get('reports', ReportsController::class);
+Route::get('profile', ProfileController::class);
 });
 //reporten PDF
 Route::get('report/pdf/{user}/{type}/{fi}/{f2}', [ExportController::class, 'reportPDF']);
@@ -55,5 +57,6 @@ Route::get('report/pdf/{user}/{type}', [ExportController::class, 'reportPDF']);
 //reporten Excel
 Route::get('report/excel/{user}/{type}/{fi}/{f2}', [ExportController::class, 'reporteExcel']);
 Route::get('report/excel/{user}/{type}', [ExportController::class, 'reporteExcel']);
-
+//perfil
+Route::get('component/{id}', [ProfileController::class, 'render']);
 
