@@ -17,31 +17,31 @@
             @include('common.searchbox')
             <div class="widget-content">
                 <div class="table-responsive">
-                    <table class="table table-bordered table striped mt-1">
+                    <table class="table table-hover table-dark mb-4">
                         <thead class="text-white" style="background:#3b3f5c;">
                             <tr>
-                                <th class="table-th text-while" style="background:#d5dfe9">
+                                <th class="table-th text-while" style="background:#3b3f5c">
                                     DESCRIPCION
                                 </th>
-                                <th class="table-th text-while" style="background:#d5dfe9">
+                                <th class="table-th text-while" style="background:#3b3f5c">
                                     BARCODE
                                 </th>
-                                <th class="table-th text-while" style="background:#d5dfe9">
+                                <th class="table-th text-while" style="background:#3b3f5c">
                                     CATEGORIA
                                 </th>
-                                <th class="table-th text-while" style="background:#d5dfe9">
+                                <th class="table-th text-while" style="background:#3b3f5c">
                                     PRECIO
                                 </th>
-                                <th class="table-th text-while" style="background:#d5dfe9">
+                                <th class="table-th text-while" style="background:#3b3f5c">
                                     STOCK
                                 </th>
-                                <th class="table-th text-while" style="background:#d5dfe9">
+                                <th class="table-th text-while" style="background:#3b3f5c">
                                     INV.MIN
                                 </th>
-                                <th class="table-th text-while text-center" style="background:#d5dfe9">
+                                <th class="table-th text-while text-center" style="background:#3b3f5c">
                                     IMAGEN
                                 </th>
-                                <th class="table-th text-while text-center" style="background:#d5dfe9">
+                                <th class="table-th text-while text-center" style="background:#3b3f5c">
                                     ACCTIONS
                                 </th>
                             </tr>

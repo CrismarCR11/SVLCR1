@@ -6,14 +6,17 @@ use Livewire\Component;
 use Spatie\Permission\Models\Permission;
 use Spatie\Permission\Models\Role;
 use Livewire\WithPagination;
-use DB;
+use Illuminate\Support\Facades\DB;
+use App\Models\User;
+
 
 class AsignarController extends Component
 {
     
     use WithPagination;
 
-    public $role, $componentName, $permisosSelected = [], $old_permissions = [], $namerol, $idrol, $rolesTD, $mostrarTR;
+    public $role, $componentName, $permisosSelected = [], $old_permissions = [], 
+    $namerol, $idrol, $rolesTD, $mostrarTR, $search;
     private $pagination = 10;
 
     public function paginationView()
@@ -25,23 +28,47 @@ class AsignarController extends Component
     {
         $this->role = 'Elegir';
         $this->componentName = 'Asignar Permisos';
-        $this->rolesTD = 'Algo';
+        $this->rolesTD = 'Todos';
+        
     }
 
     public function render()
     {
+        if(strlen($this->search) > 0)
+            //buscar el dato
+            $permisos = Permission::select('name', 'id', DB::raw("0 as checkedsss"), DB::raw("0 as Total"))
+            ->where('name', 'like', '%' . $this->search . '%')->paginate($this->pagination);
+      
+        else
+            $permisos = Permission::select('name', 'id', DB::raw("0 as checkedsss"), DB::raw("0 as Total") )
+            ->orderBy('name', 'asc')
+            ->paginate($this->pagination);
         
         //mostrar el listado de pemisos
-        $permisos = Permission::select('name', 'id', DB::raw("0 as checked") )
+        /*$permisos = Permission::select('name', 'id', DB::raw("0 as checkedsss"), DB::raw("0 as Total") )
         ->orderBy('name', 'asc')
-        ->paginate($this->pagination);
+        ->paginate($this->pagination);*/
+        //dd($permisos);
 
         if($this->role != 'Elegir' )
         {
+            //$RolesCount = Permission::find($id)->getRoleNames()->count();
             $list = Permission::join('role_has_permissions as rp', 'rp.permission_id', 'permissions.id')
-            ->where('role_id', $this->role)->pluck('permissions.id')->toArray();
+            ->where('role_id', $this->role)->pluck('permissions.id');
             //lista de rol de permisos anterior
             $this->old_permissions = $list;
+            //$RolesCount = Permission::find($this->old_permissions)->count();
+            //dd($this->old_permissions);
+        }
+        //contar cada permiso cuantos roles tiene
+        foreach ($permisos as $permiso)
+        {
+            $contar= Permission::find($permiso->id)->getRoleNames()->count();
+            
+            if($contar > 0)
+            {
+                $permiso->Total = $contar;
+            }
         }
         
         if($this->role != 'Elegir' )
@@ -55,11 +82,20 @@ class AsignarController extends Component
                 }
                 
             }
-            $this->namerol=$role->name;
-            $this->idrol=$role->id;
-            $this->mostrarTR=$this->rolesTD;
+            //obtendremos la info para los permisos con check
+            //validamos que no tenga nada escrito el search para obtener la info
+            if($this->search != null)
+            {
+            }
+            else{
+                $this->namerol=$role->name;
+                $this->idrol=$role->id;
+                $this->mostrarTR=$this->rolesTD;
+            }
+            
             
         }else{
+            //permisos no check
             $this->namerol=$this->role;
         }
         //todos los permisos

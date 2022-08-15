@@ -21,7 +21,8 @@
             @endcan
             <div class="widget-content">
                 <div class="table-responsive">
-                    <table class="table table-bordered table striped mt-1">
+                    <!-- Anterior formato de tabla table table-bordered table striped mt-1 -->
+                    <table class="table table-hover table-dark mb-4">
                         <thead class="text-white" style="background:#3b3f5c;">
                             <tr>
                                 <th class="table-th text-while" style="color: #d5dfe9">

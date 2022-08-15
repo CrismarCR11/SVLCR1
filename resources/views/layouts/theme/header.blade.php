@@ -1,6 +1,6 @@
-<div class="header-container fixed-top">
-    <header class="header navbar navbar-expand-sm">
-        <ul class="navbar-item flex-row">
+<div class="header-container fixed-top" >
+    <header class="header navbar navbar-expand-sm" style="background: #cac3c1">
+        <ul class="navbar-item flex-row" >
             <li class="nav-item theme-logo">
                 <a href="javascript:void(0);">
                     <img src="assets/img/90x90.jpg" class="navbar-logo" alt="logo">

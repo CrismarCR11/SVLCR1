@@ -1,9 +1,9 @@
-<div class="row sales layout-top-spacing">
+<div class="row sales layout-top-spacing" style="background: #000000">
     <div class="col-sm-12">
-        <div class="widget widget-chart-one">
+        <div class="widget widget-chart-one" style="background: #3b3f5c">
             <div class="widget-heading">
                 <h4 class="card-title">
-                    <b>{{$componentName}} | {{$pageTitle}}</b>
+                    <b style="color: #fff">{{$componentName}} | {{$pageTitle}}</b>
                 </h4>
                 <ul class="tabs tab-pills">
                     <li>
@@ -17,7 +17,7 @@
             @include('common.searchbox')
             <div class="widget-content">
                 <div class="table-responsive">
-                    <table class="table table-bordered table striped mt-1">
+                    <table class="table table-dark table-bordered table-hover mt-1">
                         <thead class="text-white" style="background:#3b3f5c;">
                             <tr>
                                 <th class="table-th text-white ">
@@ -105,6 +105,7 @@
         </div>
     </div>
     @include('livewire.users.form')
+    
 </div>
 
 <script>

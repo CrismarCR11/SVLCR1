@@ -33,7 +33,7 @@ class RolesController extends Component
     {
         //validar si el usuario ingreso informacion
         if(strlen($this->search) > 0)
-            $roles = Role::where('name', 'like', '%' . $this->search . '&')->paginate($this->pagination);
+            $roles = Role::where('name', 'like', '%' . $this->search . '%')->paginate($this->pagination);
         else
         $roles = Role::orderBy('name', 'asc')->paginate($this->pagination);
 
@@ -118,6 +118,7 @@ class RolesController extends Component
         //defininar permisos 
         //cantidad de permisos que tiene
         $permissionsCount = Role::find($id)->permissions->count();
+        dd($permissionsCount);
         if($permissionsCount > 0)
         {
             $this->emit('role-error', 'No se puede eliminar el rol por que tiene permisos asociados');

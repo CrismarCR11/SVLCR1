@@ -1,6 +1,6 @@
 <div class="row sales layout-top-spacing">
     <div class="col-sm-12">
-        <div class="widget">
+        <div class="widget" style="background: #ebe6ea">
             <div class="widget-heading">
                 <h4 class="card-title text-center"><b>{{$componentName}}</b></h4>
             </div>
@@ -63,7 +63,8 @@
                     <div class="col-sm-12 col-md-9">
                         <!-- TABLA -->
                         <div class="table-responsive">
-                            <table class="table table-bordered table striped mt-1">
+                            <!-- Anterior table: table table-bordered border-primary table striped mt-1  -->
+                            <table class="table table-hover table-dark mb-4">
                                 <thead class="text-white" style="background:#3b3f5c;">
                                     <tr>
                                         <th class="table-th text-white text-center" >

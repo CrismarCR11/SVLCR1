@@ -96,7 +96,7 @@ class ExportController extends Controller
         $user = $userId == 0 ? 'Todos' : User::find($userId)->name;
         //usar lo importado del PDF
         //loadView = pasando la vista
-        $pdf = FacadePdf::loadView('pdf.reporte1', compact('data','reportType', 'user', 'dateFrom', 'dateTo' , 'fechaHoy', 'vende', 'horahoy'));
+        $pdf = FacadePdf::loadView('pdf.reporte1', compact('data','reportType', 'user', 'dateFrom', 'dateTo' , 'fechaHoy', 'horahoy'));
         //visualizar en el navegador
         return $pdf->stream('salesReport.pdf'); 
         //para descargar el reporte en pdf

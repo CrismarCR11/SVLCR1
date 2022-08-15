@@ -184,9 +184,9 @@ class PosController extends Component
 
 
     //metodo eliminar un producto de ventas con ayudade las funciones cart
-    public function removeItem($productId)
+    public function removeItem($productId, $efectivo, $change)
     {
-        
+       
         //eliminar
         Cart::remove($productId);
 
@@ -195,6 +195,8 @@ class PosController extends Component
         //actualizar items quanyity
         $this->itemsQuantity = Cart::getTotalQuantity();
         //emitir el evento
+        $this->efectivo = $efectivo;
+        $this->change = $change;
         $this ->emit('scan-ok', 'Producto eliminado');
 
     }

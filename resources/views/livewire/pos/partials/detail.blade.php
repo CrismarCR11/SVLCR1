@@ -50,7 +50,7 @@
                                             </td>
                                             <td class="text-center">
                                                 <button
-                                                    onclick="Confirm('{{ $item->id }}', 'removeItem', '¿CONFIRMAS ELIMINAR E REGISTRO?')"
+                                                    onclick="Confirm('{{ $item->id }}', '{{0}}', '{{0}}', 'removeItem', '¿CONFIRMAS ELIMINAR E REGISTRO?')"
                                                     class="btn btn-dark mbmobile">
                                                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                                                         viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"

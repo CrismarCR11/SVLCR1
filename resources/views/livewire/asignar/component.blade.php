@@ -5,7 +5,7 @@
                 <h4 class="card-title">
                     <b>{{$componentName}} </b>
                 </h4>
-                
+                     
             </div>
 
             <div class="widget-content">
@@ -41,7 +41,7 @@
                         Revocar Todos
                     </button>
                 </div>
-
+                @include('common.searchbox')
                 <div class="row mt-3">
                     <div class="col-sm-12">
                         <div class="table-responsive">
@@ -87,7 +87,7 @@
                                         </td>
 
                                         <td class="text-center">
-                                            <h6> {{ \App\Models\User::permission($permiso->name)->count() }} </h6>
+                                            <h6>{{ $permiso->Total }}</h6>
                                         </td>
                                         @elseif($mostrarTR=='Todos' )
                                         <td>
@@ -113,7 +113,7 @@
                                         </td>
 
                                         <td class="text-center">
-                                            <h6> {{ \App\Models\User::permission($permiso->name)->count() }} </h6>
+                                            <h6>{{ $permiso->Total }}</h6>
                                         </td>
                                         
                                         @endif

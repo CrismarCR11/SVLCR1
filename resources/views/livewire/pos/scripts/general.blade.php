@@ -9,7 +9,7 @@
     })
 
 
-    function Confirm(id, eventName, text)
+    function Confirm(id, change, efectivo, eventName, text)
     {   
         
         swal({
@@ -23,7 +23,7 @@
             confirmButtonText: 'Aceptar'
         }).then(function(result){
             if(result.value){
-                window.livewire.emit(eventName, id)
+                window.livewire.emit(eventName, id, efectivo, change)
                 swal.close()
             }
         })

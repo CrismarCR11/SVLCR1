@@ -1,6 +1,6 @@
 <div class="row sales layout-top-spacing">
     <div class="col-sm-12">
-        <div class="widget widget-chart-one">
+        <div class="widget widget-chart-one" style="background: #7e949e">
             <div class="widget-heading">
                 <h4 class="card-title">
                     <b>{{$componentName}} | {{$pageTitle}}</b>
@@ -17,8 +17,8 @@
             @include('common.searchbox')
             <div class="widget-content">
                 <div class="table-responsive">
-                    <table class="table table-bordered table striped mt-1">
-                        <thead class="text-white" style="background:#3b3f5c;">
+                    <table class="table table-bordered border-danger table striped mt-1">
+                        <thead class="text-white" style="background: #3b3f5c">
                             <tr>
                                 <th class="table-th text-while" style="color: #d5dfe9">
                                     ID
@@ -31,12 +31,12 @@
                                 </th>
                             </tr>
                         </thead>
-                        <tbody>
+                        <tbody style="background: #ebe6ea">
                             @foreach ($permisos as $permiso)
                                 
                           
                             <tr>
-                                <td>
+                                <td> 
                                     <h6>{{$permiso->id}}</h6>
                                 </td>
                                 <td class="text-center">

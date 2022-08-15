@@ -10,7 +10,7 @@
    @include('layouts.theme.styles')
 
 </head>
-<body class="sidebar-noneoverflow dashboard-sales">
+<body class="sidebar-noneoverflow dashboard-sales" style="background: #747474">
     <!-- BEGIN LOADER -->
     <div id="load_screen"> <div class="loader"> <div class="loader-content">
         <div class="spinner-grow align-self-center"></div>

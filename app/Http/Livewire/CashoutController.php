@@ -6,16 +6,20 @@ use Livewire\Component;
 use App\Models\Sale;
 use App\Models\User;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\DB;
 
 class CashoutController extends Component
 {
-    public $fromDate, $toDate, $userid, $total, $items, $sales, $details;
+    public $fromDate, $toDate, $userid, $total, $items, $sales, $details, $ventaT;
     public function mount()
     {
+        $this->ventaT=sale::sum('total');
+        
         $this->fromDate = null;
         $this->toDate = null;
         $this->userid = 0;
-        $this ->total = 0;
+        $this ->total = sale::sum('total');
+        
         $this->sales = [];
         $this->details = [];
     } 

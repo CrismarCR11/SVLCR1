@@ -119,19 +119,19 @@ class PermisosController extends Component
 
     public function Destroy($id)
     {
-        dd(hola);
+        
         //defininar permisos 
         //cantidad de permisos que tiene
         $RolesCount = Permission::find($id)->getRoleNames()->count();
+        dd($RolesCount);
         //si es mayor a 0, tenemos roles asociados a nuestro permiso
         if($RolesCount > 0)
         {
-            dd(hola);
+            dd('hola');
             $this->emit('permiso-error', 'No se puede eliminar el permiso por que tiene permisos asociados');
             //para detener el flujo de procesos
             return;
         }
-        dd(hola);
         //si no tiene nada asociado, se elimina el permiso
         Permission::find($id)->delete();
         $this->emit('permiso-deleted', 'Se elimino el permiso con exito');
