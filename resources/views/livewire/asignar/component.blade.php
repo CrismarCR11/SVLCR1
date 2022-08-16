@@ -62,16 +62,16 @@
                                 <tbody>
                                     @foreach ($permisos as $permiso)
                                     <tr>
-                                        
+                                        <!-- Si se da click a mostrar permisos del empleado se entrara a este if -->
                                         @if(($permiso->checked==1 && $mostrarTR=='Asignados')|| $namerol=='Elegir')
                                         <td>
                                             <h6 class="text-center">{{$permiso->id}}</h6>
                                         </td>
 
-                                        <td class="text-center">
+                                        <td class="">
                                             
-                                            <div class="n-check">
-                                                
+                                            <div class="n-check" style="justify-content: center">
+                                                <!--
                                                 <label class="new-control new-checkbox checkbox-primary">
                                                     <input type="checkbox" wire:change="SyncPermiso($('#p' + {{ $permiso->id }} ).is(':checked'), '{{ $permiso->name }}' )"
                                                     id="p{{ $permiso->id }}"
@@ -82,8 +82,22 @@
                                                     <span class="new-control-indicator"></span>
                                                     <h6> {{ $permiso->name }} </h6>
                                                 </label>
-                                               
+                                            -->
+                                            
+                                                
+                                                
                                             </div>
+                                       
+
+                                            <div class="form-check form-switch" style="font-size: 20px;text-align: center;">
+                                                <input class="form-check-input" type="checkbox" wire:change="SyncPermiso($('#p' + {{ $permiso->id }} ).is(':checked'), '{{ $permiso->name }}' )"
+                                                id="p{{ $permiso->id }}"
+                                                value="{{ $permiso->id }}"
+                                                class="new-control-input"
+                                                {{ $permiso->checked == 1 ? 'checked': '' }}
+                                                >
+                                                <label class="form-check-label" for="flexSwitchCheckDefault"><h6 > {{ $permiso->name }} </h6></label>
+                                              </div>
                                         </td>
 
                                         <td class="text-center">
@@ -95,7 +109,7 @@
                                         </td>
 
                                         <td class="text-center">
-                                            
+                                            <!-- 
                                             <div class="n-check">
                                                 
                                                 <label class="new-control new-checkbox checkbox-primary">
@@ -110,6 +124,16 @@
                                                 </label>
                                                
                                             </div>
+                                        -->
+                                        <div class="form-check form-switch" style="font-size: 20px;text-align: center;">
+                                            <input class="form-check-input" type="checkbox" wire:change="SyncPermiso($('#p' + {{ $permiso->id }} ).is(':checked'), '{{ $permiso->name }}' )"
+                                            id="p{{ $permiso->id }}"
+                                            value="{{ $permiso->id }}"
+                                            class="new-control-input"
+                                            {{ $permiso->checked == 1 ? 'checked': '' }}
+                                            >
+                                            <label class="form-check-label" for="flexSwitchCheckDefault"><h6 > {{ $permiso->name }} </h6></label>
+                                          </div>
                                         </td>
 
                                         <td class="text-center">

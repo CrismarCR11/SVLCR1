@@ -7,7 +7,9 @@
                     <b>{{$componentName}}</b> | {{ $selected_id > 0 ? 'EDITAR' : 'CREAR'}}
                 </h5>
                 <h6 class="text-center text-warning" wire:loading>
-                    POR FAVOR ESPERE
+                    <div class="col-4">
+                        <div class="loader mx-auto"></div>
+                    </div>
                 </h6>
             </div>
             <div class="modal-body">

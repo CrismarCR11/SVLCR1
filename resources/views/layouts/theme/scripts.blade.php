@@ -24,6 +24,7 @@
  <script src="{{ asset('plugins/notification/snackbar/snackbar.min.js') }}"></script>
  <script src="{{ asset('plugins/nicescroll/nicescroll.min.js') }}"></script>
  <script src="{{ asset('plugins/currency/currency.js') }}"></script>
+ <!-- loaders-->
  <script>
     function noty(msg, option = 1)
 {

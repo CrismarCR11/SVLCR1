@@ -26,7 +26,7 @@ class PosController extends Component
         $this->efectivo = 0;
         $this->change = 0;
         $this->total = 0;
-        $this->itemsQuantity = Cart::getTotalQuantity();
+        $this->itemsQuantity = 0;
     }
     public function paginationView()
     {
@@ -37,7 +37,7 @@ class PosController extends Component
     {   
         //obtener los datos del carrito
         $this->total = Cart::getTotal();
-        
+        $this->itemsQuantity = Cart::getTotalQuantity();
         return view('livewire.pos.component',[
 
             'denominations' => Denomination::orderBy('value','desc')->get(),
@@ -169,7 +169,7 @@ class PosController extends Component
         }
 
         //eliminar el carrito
-        $this-> removeItem($productId);
+        $this->removeItem($productId,0,0);
         if($cant >0)
         {
             Cart::add($product->id, $product->name, $product->price, $cant, $product->image);
@@ -203,18 +203,22 @@ class PosController extends Component
     //metodo decrementar producto
     public function decreaseQty($productId)
     {
-        //recuperar el carrito
+            //recuperar el carrito
         $item = Cart::get($productId);
         //eliminarlo del carrito
         Cart::remove($productId);
         //decrementar la cantidad del producto
+        if($item == null)
+        {
+            return;
+        }
         $newQty = ($item->quantity) -1;
+        //dd($newQty);
         //validacion
         if($newQty > 0)
         {
             Cart::add($item->id, $item->name, $item->price, $newQty, $item->attributes[0]);
         }
-            
         
         //actualizar el total
         $this->total = Cart::getTotal();
@@ -222,9 +226,12 @@ class PosController extends Component
         $this->itemsQuantity = Cart::getTotalQuantity();
         //emitir el evento
         $this ->emit('scan-ok', 'Cantidad bajada');
+        
+        
+        
     }
 
-    //metodo limpiar
+    //metodo limpiar carrito
     public function clearCart()
     {
         //limpiar
@@ -239,7 +246,7 @@ class PosController extends Component
          //emitir el evento
          $this ->emit('scan-ok', 'Carrito Vacio');
     }
-    //metodo guardar producto
+    //metodo guardar venta
     public function saveSale()
     {
         //validar el total

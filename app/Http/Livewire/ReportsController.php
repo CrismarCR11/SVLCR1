@@ -57,7 +57,9 @@ class ReportsController extends Component
             $this->data = Sale::join('users as u','u.id','sales.user_id')
             ->select('sales.*','u.name as user')
             ->whereBetween('sales.created_at', [$from,$to])
+            ->orderBy('sales.total','desc')
             ->get();
+            //dd($this->data);
         } else {
             $this->data = Sale::join('users as u','u.id','sales.user_id')
             ->select('sales.*','u.name as user')

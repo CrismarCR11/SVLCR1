@@ -3,6 +3,7 @@
 <!-- BEGIN GLOBAL MANDATORY STYLES -->
  <link href="https://fonts.googleapis.com/css?family=Quicksand:400,500,600,700&display=swap" rel="stylesheet">
  <link href="{{asset('bootstrap/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
  <link href="{{ asset('assets/css/plugins.css') }}" rel="stylesheet" type="text/css" />
  <link href="{{ asset('assets/css/structure.css') }}" rel="stylesheet" type="text/css" class="structure" />
  <!-- END GLOBAL MANDATORY STYLES -->
@@ -18,6 +19,12 @@
 
  <link href="{{asset('assets/css/apps/scrumboard.css') }}" rel="stylesheet" type="text/css" />
  <link href="{{asset('assets/css/apps/notes.css') }}" rel="stylesheet" type="text/css" />
+ <!-- loaders -->
+
+ <link href="{{asset('plugins/loaders/custom-loader.css') }}" rel="stylesheet" type="text/css" />
+ <!-- switches -->
+ <link href="{{asset('assets/css/forms/switches.css') }}" rel="stylesheet" type="text/css" />
+
 <style>
     aside{
         display: none!important;

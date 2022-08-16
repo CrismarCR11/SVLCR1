@@ -14,6 +14,7 @@ use App\Http\Livewire\CashoutController;
 use App\Http\Livewire\ReportsController;
 use App\Http\Controllers\ExportController;
 use App\Http\Livewire\ProfileController;
+use App\Http\Livewire\SummaryController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -50,6 +51,7 @@ Route::get('users', UsersController::class);
 Route::get('cashout', CashoutController::class);
 Route::get('reports', ReportsController::class);
 Route::get('profile', ProfileController::class);
+Route::get('summary', SummaryController::class);
 });
 //reporten PDF
 Route::get('report/pdf/{user}/{type}/{fi}/{f2}', [ExportController::class, 'reportPDF']);

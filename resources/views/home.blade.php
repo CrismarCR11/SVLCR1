@@ -22,4 +22,8 @@
         </div>
     </div>
 </div>
+<br>
+<div class="text-center" >
+    <livewire:summary-controller>
+</div>
 @endsection
