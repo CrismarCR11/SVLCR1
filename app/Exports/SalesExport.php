@@ -10,6 +10,12 @@ use PhpOffice\PhpSpreadsheet\Worksheet\Worksheet;       //para interactuar con e
 use Maatwebsite\Excel\Concerns\WithCustomStartCell;     //para definir la celda donde inicia el reporte
 use Maatwebsite\Excel\Concerns\WithTitle;               //para colocar el nombre a las hojas del libro
 use Maatwebsite\Excel\Concerns\WithStyles;              //para dar formato a las celdas
+use PhpOffice\PhpSpreadsheet\Style\Fill;
+use PhpOffice\PhpSpreadsheet\Style\Style;
+use PhpOffice\PhpSpreadsheet\Style\Color;
+use Maatwebsite\Excel\Concerns\WithBackgroundColor;
+use Maatwebsite\Excel\Concerns\WithDefaultStyles;
+
 class SalesExport implements FromCollection, WithHeadings, WithCustomStartCell, WithTitle, WithStyles
 {
     
@@ -52,6 +58,7 @@ class SalesExport implements FromCollection, WithHeadings, WithCustomStartCell, 
             ->where('user_id', $this->userId)
             ->get();
         }
+        dd($data);
         //retornar datos para el exel
         return $data;
     }
@@ -71,10 +78,15 @@ class SalesExport implements FromCollection, WithHeadings, WithCustomStartCell, 
     public function styles(Worksheet $sheet)
     {
         return [
-            2 => ['font' => ['bold' => true]],
+            2 => ['font' => ['bold' => true, 'size' => 15,'background' => array('rgb' => 'red')],
+            /*'background' => [
+                'color'=>  array('rgb' => 'red')
+            ]*/
+            ],
             
         ];
     }
+
     //Titulo del Excel
     public function title(): string
     {

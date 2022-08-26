@@ -85,12 +85,11 @@
                                             -->
                                             
                                                 
-                                                
                                             </div>
                                        
 
-                                            <div class="form-check form-switch" style="font-size: 20px;text-align: center;">
-                                                <input class="form-check-input" type="checkbox" wire:change="SyncPermiso($('#p' + {{ $permiso->id }} ).is(':checked'), '{{ $permiso->name }}' )"
+                                            <div class="form-check form-switch" style="font-size: 20px;text-align: center; background:#467fcf;">
+                                                <input class="form-check-input " type="checkbox" wire:change="SyncPermiso($('#p' + {{ $permiso->id }} ).is(':checked'), '{{ $permiso->name }}' )"
                                                 id="p{{ $permiso->id }}"
                                                 value="{{ $permiso->id }}"
                                                 class="new-control-input"
