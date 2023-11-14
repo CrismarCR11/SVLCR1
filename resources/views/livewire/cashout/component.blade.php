@@ -3,7 +3,7 @@
         <div class="widget widget-chart-one">
             <div class="widget-heading">
                 <h4 class="card-title text-center">
-                    <b>Corte de Caja</b>
+                    <b>CORTE DE CAJA</b>
                 </h4>
             </div>
             <div class="widget-content">
