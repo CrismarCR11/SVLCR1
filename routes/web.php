@@ -16,7 +16,7 @@ use App\Http\Controllers\ExportController;
 use App\Http\Livewire\ProfileController;
 use App\Http\Livewire\SummaryController;
 use Illuminate\Support\Facades\Route;
-
+use Illuminate\Support\Facades\Auth;
 /*
 |--------------------------------------------------------------------------
 | Web Routes

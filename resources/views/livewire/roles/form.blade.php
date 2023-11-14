@@ -23,7 +23,7 @@
                             </svg>
                         </span>
                     </div>
-                    <input type="text" wire:model.lazy="roleName"  class="form-control" placeholder="ej: cursos" maxlength="255">
+                    <input type="text" wire:model.lazy="roleName" id="name"  class="form-control" placeholder="ej: cursos" maxlength="255">
                 </div>
                 @error('roleName')
                     <span class="text-danger er"> {{ $message }} </span>
@@ -45,9 +45,18 @@
         <button type="button" wire:click.prevent="UpdateRole()" class="btn btn-dark close-modal" >
           ACTUALIZAR
         </button>
+
+        <button onclick="mostrarValor()">Mostrar Valor</button>
         @endif
       </div>
     </div>
   </div>
 </div>
+
+<script>
+   function mostrarValor() {
+            var valor = document.getElementById("name").value;
+            console.log(valor);
+        }
+</script>
                 

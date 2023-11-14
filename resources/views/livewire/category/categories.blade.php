@@ -6,13 +6,16 @@
                     <b>{{$componentName}} | {{$pageTitle}}</b>
                 </h4>
                 <ul class="tabs tab-pills">
-                    @can('Category_Create')
+                    
                     <li>
-                        <a href="javascript:void(0)" class="tabmenu bg-dark" data-toggle="modal" data-target="#theModal">
-                            Agregar
-                        </a>
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal1">
+    Abrir Modal 1
+</button>
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal2">
+    Abrir Modal 2
+</button>
                     </li>
-                    @endcan
+                    
                 </ul>
 
             </div>
@@ -81,6 +84,7 @@
         </div>
     </div>
     @include('livewire.category.form')
+    @include('livewire.category.agregar')
 </div>
 
 <script>

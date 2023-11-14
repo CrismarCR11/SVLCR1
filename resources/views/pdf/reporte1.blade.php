@@ -6,102 +6,168 @@
     <link rel="stylesheet" href="{{ asset('assets/css/Report-pdf.css') }}">
 </head>
 <body>
-<div id="page_pdf">
-	<table id="factura_head">
-		<tr>
-			<td class="logo_factura">
-				<div>
-					<img src="img/logo.png">
-				</div>
-			</td>
-			<td class="info_empresa">
-				<div>
-					<span class="h2">SISTEMA VENTAS SVLCR</span>
-					<p>Av. Americas</p>
-					<p>Teléfono: 4475896</p>
-					<p>Email: SVLCR@gmail.com</p>
-				</div>
-			</td>
-			<td class="info_factura">
-				<div class="round">
-                    
-					<span class="h3">Factura</span>
-					<p>No. Factura: <strong>000001</strong></p>
-					<p>Fecha:  {{$fechaHoy}} </p>
-					<p>Hora: {{ $horahoy }}</p>
-					<p>Vendedor: </p>  
-                   
-				</div>
-			</td>
-		</tr>
-	</table>
-	<!--<table id="factura_cliente">
-		<tr>
-			<td class="info_cliente">
-				<div class="round">
-					<span class="h3">Cliente</span>
-					<table class="datos_cliente">
-						<tr>
-							<td><label>Nit:</label><p>54895468</p></td>
-							<td><label>Teléfono:</label> <p>7854526</p></td>
-						</tr>
-						<tr>
-							<td><label>Nombre:</label> <p>Angel Arana Cabrera</p></td>
-							<td><label>Dirección:</label> <p>Calzada Buena Vista</p></td>
-						</tr>
-					</table>
-				</div>
-			</td>
+<table>
+        <tr>
+            <td class="columna1">
+                <img class="img-go" src="assets/img/img-go.png" alt="Imagen del vehículo">
+            </td>
+            <td class="columna2">
+                <h2>Recepción de vehículo</h2>
+                <table>
+                    <tr>
+                        <td>Hora de entrada</td>
+                        <td>XX:XX AM/PM</td>
+                    </tr>
+                    <tr>
+                        <td>Hora de salida</td>
+                        <td>XX:XX AM/PM</td>
+                    </tr>
+                </table>
+            </td>
+            <td class="columna3">
+                <div>
+                    <p class="fecha-title">Número de formulario</h2>
+                    <p>123456789</p>
+                </div>
+                <div>
+                    <p class="fecha-title">Fecha Entrada</h2>
+                    <p>Día, Mes, Año</p>
+                    <p>XX-XX-XX</p>
+                </div>
+                <div>
+                    <p class="fecha-title">Fecha Salida</h2>
+                    <p>Día, Mes, Año</p>
+                    <p>XX-XX-XX</p>
+                </div>
+            </td>
+        </tr>
+    </table>
+    <h2>AREA DE TRANSPORTE - TALLER DE MAESTRANZA</h2>
 
-		</tr>
-	</table>-->
+    <table class="info">
+        <tr>
+          <th class="info-th">Nombre:</th>
+          <td class="info-td"><div class="text">
+            Rojas Tomas Garcia  oscar
+          </div></td>
+          <th class="info-th">Vehiculo:</th>
+          <td class="info-td"><div class="text">
+            Rojas Tomas 
+          </div></td>
+          <th class="info-th">Color:</th>
+          <td class="info-td"><div class="text">
+            Rojas Tomas 
+          </div></td>
+        </tr>
+        <tr>
+          <th class="info-th">Stria/Dir:</th>
+          <td class="info-td"><div class="text">
+            Rojas Tomas Garcia oscar
+          </div></td>
+          <th class="info-th">Placa:</th>
+          <td class="info-td"><div class="text">
+            Rojas Tomas 
+          </div></td>
+          <th class="info-th">Kilometraje:</th>
+          <td class="info-td"><div class="text">
+            Rojas Tomas 
+          </div></td>
+        </tr>
+        
+    </table>
+      
 
-	<table id="factura_detalle" width="100%">
-			<thead>
-				<tr>
-					<th width="20%">FOLIO</th>
-					<th class="textleft" width="15%">IMPORTE</th>
-					<th class="textright" width="15%">ITEMS</th>
-					<th class="textright" width="12%"> STATUS</th>
-					<th>USUARIO</th>
-					<th class="textcenter" width="18%"> FECHA</th>
-				</tr>
-			</thead>
-			<tbody id="detalle_productos">
-                @foreach($data as $item)
-				<tr>
-                    <td align="center" >{{$item->id}}</td>
-                    <td align="center" >${{number_format($item->total,2)}}</td>
-                    <td align="center" >{{$item->items}}</td>
-                    <td align="center" >{{$item->status}}</td>
-                    <td align="center" >{{$item->user}}</td>
-                    <td align="center" >{{\Carbon\Carbon::parse($item->created_at)->format('d-m-Y')}}</td>
-                    
-                    
-                </tr>
-                @endforeach
-			</tbody>
-			<tfoot id="detalle_totales">
-				<tr>
-                    <td class="text-center" >
-                        <span><b>TOTALES</b></span>
-                    </td>
-                    <td colspan="1" class="text-center">
-                        <span><strong>${{number_format($data->sum('total'),2)}}</strong></span>
-                    </td>
-                    <td class="textcenter">
-                        {{$data->sum('items')}}
-                    </td>
-                    <td ></td>
-                </tr>
-		</tfoot>
-	</table>
-	<div>
-		<p class="nota">Si usted tiene preguntas sobre esta factura, <br>pongase en contacto con nombre, teléfono y Email</p>
-		<h4 class="label_gracias">¡Gracias por su compra!</h4>
-	</div>
+    <table class="table-check" ">
+        <tr>
+            <td class="check-colum" ">
+                <div class="checkbox-item">
+                    <label for="checkbox1">Estuche de Herramientas</label>
+                    <input type="checkbox" id="checkbox1" name="checkbox1">
+                </div>
+                <div class="checkbox-item">
+                    <label for="checkbox1">Estuche de Herramientas</label>
+                    <input type="checkbox" id="checkbox1" name="checkbox1">
+                </div>
+                <div class="checkbox-item">
+                    <label for="checkbox1">Estuche de Herramientas</label>
+                    <input type="checkbox" id="checkbox1" name="checkbox1">
+                </div>
+                <div class="checkbox-item">
+                    <label for="checkbox1">Estuche de Herramientas</label>
+                    <input type="checkbox" id="checkbox1" name="checkbox1">
+                </div>
+                <!-- Repite las siguientes líneas de código para agregar más elementos -->
+            </td>
+            <td class="check-colum" ">
+                <div class="checkbox-item">
+                    <label for="checkbox2">Estuche de Herramientas</label>
+                    <input type="checkbox" id="checkbox2" name="checkbox2">
+                </div>
+                <div class="checkbox-item">
+                    <label for="checkbox1">Estuche de Herramientas</label>
+                    <input type="checkbox" id="checkbox1" name="checkbox1">
+                </div>
+                <div class="checkbox-item">
+                    <label for="checkbox1">Estuche de Herramientas</label>
+                    <input type="checkbox" id="checkbox1" name="checkbox1">
+                </div>
+                <div class="checkbox-item">
+                    <label for="checkbox1">Estuche de Herramientas</label>
+                    <input type="checkbox" id="checkbox1" name="checkbox1">
+                </div>
+                <!-- Repite las siguientes líneas de código para agregar más elementos -->
+            </td>
+            <td class="check-colum" ">
+                <div class="checkbox-item">
+                    <label for="checkbox3">Estuche de Herramientas</label>
+                    <input type="checkbox" id="checkbox3" name="checkbox3">
+                </div>
+                <div class="checkbox-item">
+                    <label for="checkbox1">Estuche de Herramientas</label>
+                    <input type="checkbox" id="checkbox1" name="checkbox1">
+                </div>
+                <div class="checkbox-item">
+                    <label for="checkbox1">Estuche de Herramientas</label>
+                    <input type="checkbox" id="checkbox1" name="checkbox1">
+                </div>
+                <div class="checkbox-item">
+                    <label for="checkbox1">Estuche de Herramientas</label>
+                    <input type="checkbox" id="checkbox1" name="checkbox1">
+                </div>
+                <!-- Repite las siguientes líneas de código para agregar más elementos -->
+            </td>
+        </tr>
+    </table>
 
-</div>
+    <h4>ESTADO EXTERIOR </h2>
+
+    <table class="auto">
+        <tr>
+          <th class="auto-th">IZQUIERDO</th>
+          <th class="auto-th">CENTRO</th>
+          <th class="auto-th">DERECHO</th>
+          <th class="auto-th">PARACHOQUES</th>
+        </tr>
+        <tr>
+          <td class="auto-td"><img class="car-image" src="imagen1.jpg" alt="Imagen 1"></td>
+          <td class="auto-td"><img class="car-image" src="imagen2.jpg" alt="Imagen 2"></td>
+          <td class="auto-td"><img class="car-image" src="imagen3.jpg" alt="Imagen 3"></td>
+          <td class="auto-td"><img class="car-image" src="imagen3.jpg" alt="Imagen 4"></td>
+        </tr>
+        <tr>
+          <td class="auto-td"><img class="car-image" src="imagen5.jpg" alt="Imagen 5"></td>
+          <td class="auto-td"><img class="car-image" src="imagen6.jpg" alt="Imagen 6"></td>
+          <td class="auto-td"><img class="car-image" src="imagen7.jpg" alt="Imagen 7"></td>
+        </tr>
+      </table>
+
+      
+      <div class="container">
+        <span class="label">Nombre:</span>
+        <div class="text">
+          Aquí está tu texto.
+        </div>
+      </div>
 
 </body>
 </html>

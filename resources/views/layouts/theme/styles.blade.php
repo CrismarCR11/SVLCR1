@@ -25,6 +25,9 @@
  <!-- switches -->
  <link href="{{asset('assets/css/forms/switches.css') }}" rel="stylesheet" type="text/css" />
 
+ <link href="{{asset('plugins/select2/select2.min.css') }}" rel="stylesheet" type="text/css" />
+ 
+
 <style>
     aside{
         display: none!important;

@@ -65,9 +65,9 @@ class RolesController extends Component
         //crear el rol
         Role::create(['name' => $this->roleName]);
         
-
-        $this->emit('role-added', 'Se registro el role con exito');
         $this->resetUI();
+        $this->emit('role-added', 'Se registro el role con exito');
+        
     }
 
     //metodo editar
@@ -153,5 +153,6 @@ class RolesController extends Component
         $this->search ='';
         $this->selected_id =0;
         $this->resetValidation();
+        $this->emit('roles-close', 'roles cerrar');
     }
 }

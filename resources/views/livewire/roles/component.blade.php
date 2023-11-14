@@ -104,6 +104,12 @@
         window.livewire.on('show-modal', msg =>{
             $('#theModal').modal('show')
         });
+
+        //cerrar
+        window.livewire.on('roles-close', Msg =>{
+            $('#theModal').modal('hide')
+            noty(Msg)
+        });
     });
     //confimar eliminar
     function Confirm(id)

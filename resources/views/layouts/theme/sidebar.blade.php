@@ -2,7 +2,7 @@
 
     <nav id="compactSidebar">
         <ul class="menu-categories">
-            @can('Category_Index')
+            
             <li class="active">
                 <a href="{{url('categories')}}" class="menu-toggle" data-active="true">
                     <div class="base-menu">
@@ -20,7 +20,7 @@
                     </div>
                 </a>
             </li>
-            @endcan
+            
             <li class="">
                 <a href="{{url('products')}}" class="menu-toggle" data-active="false">
                     <div class="base-menu">
